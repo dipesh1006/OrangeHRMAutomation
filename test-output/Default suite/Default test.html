@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Sep 25 22:58:42 IST 2024</td>
+<td>Started on:</td><td>Thu Sep 26 22:47:53 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>81 seconds (81807 ms)</td>
+<tr><td>Total time:</td><td>45 seconds (45429 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,29 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='RunnerClasses.TestRunner.runScenario()'><b>runScenario</b><br>Test class: RunnerClasses.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate User can able to LogIn OrangeHRM Portal", "Log in to OrangeHRM Portal with different Login Creds"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;GenericUtils.ReuseableMethods.WaitUntilElementVisible(org.openqa.selenium.WebElement)&quot; because &quot;this.reuseable&quot; is null
+	at POMClasses.LoginPageOrangeHRM.log_In(LoginPageOrangeHRM.java:62)
+	at stepDefinations.LogInTestSD.click_on_log_in_btn(LogInTestSD.java:39)
+	at ✽.Click on LogIn Btn(file:///E:/EclipsWorkSpace/OrangeHRMPortalAutomationFinal/src/test/java/featureFiles/LoginTestBase.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace900073076", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace900073076'><pre>java.lang.NullPointerException: Cannot invoke &quot;GenericUtils.ReuseableMethods.WaitUntilElementVisible(org.openqa.selenium.WebElement)&quot; because &quot;this.reuseable&quot; is null
+	at POMClasses.LoginPageOrangeHRM.log_In(LoginPageOrangeHRM.java:62)
+	at stepDefinations.LogInTestSD.click_on_log_in_btn(LogInTestSD.java:39)
+	at ✽.Click on LogIn Btn(file:///E:/EclipsWorkSpace/OrangeHRMPortalAutomationFinal/src/test/java/featureFiles/LoginTestBase.feature:8)
+</pre></div></td>
+<td>24</td>
+<td>RunnerClasses.TestRunner@71e9ddb4</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -78,17 +101,7 @@ function toggleAllBoxes() {
 <tr>
 <td title='RunnerClasses.TestRunner.runScenario()'><b>runScenario</b><br>Test class: RunnerClasses.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate User can able to LogIn OrangeHRM Portal", "Log in to OrangeHRM Portal with different Login Creds"</td>
 <td></td>
-<td>70</td>
-<td>RunnerClasses.TestRunner@71e9ddb4</td></tr>
-<tr>
-<td title='RunnerClasses.TestRunner.runScenario()'><b>runScenario</b><br>Test class: RunnerClasses.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate User can able to LogIn OrangeHRM Portal", "Log in to OrangeHRM Portal with different Login Creds"</td>
-<td></td>
-<td>68</td>
-<td>RunnerClasses.TestRunner@71e9ddb4</td></tr>
-<tr>
-<td title='RunnerClasses.TestRunner.runScenario()'><b>runScenario</b><br>Test class: RunnerClasses.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate User can able to LogIn OrangeHRM Portal", "Log in to OrangeHRM Portal with different Login Creds"</td>
-<td></td>
-<td>80</td>
+<td>19</td>
 <td>RunnerClasses.TestRunner@71e9ddb4</td></tr>
 </table><p>
 </body>
