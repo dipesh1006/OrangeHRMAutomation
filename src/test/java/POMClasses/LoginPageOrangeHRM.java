@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import java.util.*;
 
 import GenericUtils.ReuseableMethods;
 import ProjectManagers.TextContextObject;
@@ -27,7 +28,7 @@ public class LoginPageOrangeHRM {
 	@FindBy(xpath="//input[@name='password']")
 	WebElement passwordfield;
 	
-	@FindBy(xpath="//button[@type='submit']")
+	@FindBy(xpath="// div[@class='oxd-form-actions orangehrm-login-action'] / button[@type='submit']")
 	WebElement loginbtn;
 	
 	@FindBy(xpath="//h6[contains(@class,'oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-module')]")
@@ -50,6 +51,16 @@ public class LoginPageOrangeHRM {
 	
 	@FindBy(xpath="//div[@class='orangehrm-card-container'] / p[1]")
 	WebElement errormsgparagraph;
+	
+	@FindBy(xpath="//li[@class='oxd-main-menu-item-wrapper'] / a / span")
+	List<WebElement> menuList;
+	
+	@FindBy(xpath="//li / a[contains(text(),'Logout')]")
+	WebElement logout;
+	
+	@FindBy(xpath="//span[@class='oxd-userdropdown-tab'] / i")
+	WebElement logoutmenutriangle;
+	
 	
 	public void fill_userName_password_details(String usename,String password)
 	{
@@ -108,4 +119,28 @@ public class LoginPageOrangeHRM {
 		Assert.assertEquals(errormsgtitile.getText(), Errormessage1);
 		Assert.assertEquals(errormsgparagraph.getText(), Errormessage2);
 	}
+	
+	
+	public void Search_Panel_From_ListOfPanel(String panelname)
+	{
+		for(int i=0;i<menuList.size();i++)
+		{
+			if(menuList.get(i).getText().equalsIgnoreCase(panelname))
+			{
+				menuList.get(i).click();
+				break;
+			}
+		}
+		reuseable.WaitUntilElementVisible(dashboard);
+	}
+	
+	public void LogOut_User()
+	{
+		logoutmenutriangle.click();
+		reuseable.WaitUntilElementVisible(logout);
+		logout.click();
+		reuseable.WaitUntilElementVisible(loginbtn);
+	}
+	
+	
 }

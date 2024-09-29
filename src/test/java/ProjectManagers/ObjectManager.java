@@ -3,6 +3,7 @@ package ProjectManagers;
 import org.openqa.selenium.WebDriver;
 
 import GenericUtils.ReuseableMethods;
+import POMClasses.AdminPageOrangeHRM;
 import POMClasses.LoginPageOrangeHRM;
 
 
@@ -26,5 +27,11 @@ public class ObjectManager {
 	{
 		return new LoginPageOrangeHRM(driver);
 	}
+	
+	public AdminPageOrangeHRM getObjectAdminPageOrangeHRM()
+	{
+		return new AdminPageOrangeHRM(driver);
+	}
+	
 	
 }

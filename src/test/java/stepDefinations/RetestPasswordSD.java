@@ -1,7 +1,5 @@
 package stepDefinations;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
 import GenericUtils.ReuseableMethods;
 import POMClasses.LoginPageOrangeHRM;
