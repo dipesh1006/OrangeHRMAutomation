@@ -2,6 +2,7 @@ package POMClasses;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -65,12 +66,13 @@ public class LoginPageOrangeHRM {
 	public void fill_userName_password_details(String usename,String password)
 	{
 		user = usename;
+		reuseable.WaitUntilElementVisible(usernamefield);
 		usernamefield.sendKeys(usename);
 		passwordfield.sendKeys(password);
 		
 	}
 	
-	public void log_In() throws Exception
+	public void log_In()
 	{
 		loginbtn.click();
 		if(user.equalsIgnoreCase("Admin"))
@@ -101,7 +103,7 @@ public class LoginPageOrangeHRM {
 		}
 	}
 	
-	public void click_Forget_Password() throws Exception
+	public void click_Forget_Password()
 	{
 		forget.click();
 		reuseable.WaitUntilElementVisible(resetbtn);
@@ -113,7 +115,7 @@ public class LoginPageOrangeHRM {
 		resetbtn.click();
 	}
 	
-	public void verify_RestPassword_dialougeBox_ErrorMessage(String Errormessage1,String Errormessage2) throws Exception
+	public void verify_RestPassword_dialougeBox_ErrorMessage(String Errormessage1,String Errormessage2) 
 	{
 		reuseable.WaitUntilElementVisible(errormsgtitile);
 		Assert.assertEquals(errormsgtitile.getText(), Errormessage1);
@@ -142,5 +144,16 @@ public class LoginPageOrangeHRM {
 		reuseable.WaitUntilElementVisible(loginbtn);
 	}
 	
+	public void fill_userName_password_details_Login(String usename,String password) throws Exception
+	{
+		user = usename;
+		reuseable.WaitUntilElementVisible(usernamefield);
+		usernamefield.sendKeys(usename);
+		passwordfield.sendKeys(password);
+		loginbtn.click();
+		Thread.sleep(5000);
+		
+		
+	}
 	
 }

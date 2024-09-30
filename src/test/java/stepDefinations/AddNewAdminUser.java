@@ -39,13 +39,15 @@ public class AddNewAdminUser {
 	@When("Logout from Current User")
 	public void logout_from_current_user() {
 
-
+		loginpage.LogOut_User();
 		
 	}
 
 	@Then("Login through new user details {string} and {string}")
-	public void login_through_new_user_details(String username, String password) {
+	public void login_through_new_user_details(String username, String password) throws Exception {
 
+		loginpage.fill_userName_password_details_Login(username, password);
+		
 
 	}
 
