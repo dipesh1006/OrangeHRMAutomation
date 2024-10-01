@@ -1,5 +1,7 @@
 package stepDefinations;
 
+import org.testng.Assert;
+
 import GenericUtils.ReuseableMethods;
 import POMClasses.AdminPageOrangeHRM;
 import POMClasses.LoginPageOrangeHRM;
@@ -51,5 +53,11 @@ public class AddNewAdminUser {
 
 	}
 
+	@Then("Verify user Login Successfully")
+	public void verify_Login_Successfully()
+	{
+		String name = loginpage.verify_Dashboard_Is_Visiable();
+		Assert.assertEquals(name, "Dashboard");
+	}
 	
 }

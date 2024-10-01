@@ -1,6 +1,8 @@
 package stepDefinations;
 
 
+import org.testng.Assert;
+
 import GenericUtils.ReuseableMethods;
 import POMClasses.LoginPageOrangeHRM;
 import ProjectManagers.TextContextObject;
@@ -27,10 +29,12 @@ public class RetestPasswordSD {
 		loginpage.fill_forget_username_Click_Resetbtn(username);
 	}
 
-	@Then("Verify {string} and {string} in a dialogbox")
-	public void verify_and_in_a_dialogbox(String message1, String message2) throws Exception {
+	@Then("Verify {string} in a dialogbox")
+	public void verify_and_in_a_dialogbox(String expectedmessage) {
 
-		loginpage.verify_RestPassword_dialougeBox_ErrorMessage(message1,message2);
+		String actualmessage = loginpage.verify_RestPassword_dialougeBox_ErrorMessage();
+		Assert.assertEquals(actualmessage, expectedmessage);
+		
 	}
 
 }

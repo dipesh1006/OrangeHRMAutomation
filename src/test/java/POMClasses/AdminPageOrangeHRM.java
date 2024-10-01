@@ -95,7 +95,6 @@ public class AdminPageOrangeHRM {
 		empname.click();
 		Actions actions = new Actions(driver);
 		actions.sendKeys(name).pause(4000).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).perform();
-		System.out.println("Select Employee name");
 
 	}
 	

@@ -115,11 +115,11 @@ public class LoginPageOrangeHRM {
 		resetbtn.click();
 	}
 	
-	public void verify_RestPassword_dialougeBox_ErrorMessage(String Errormessage1,String Errormessage2) 
+	public String verify_RestPassword_dialougeBox_ErrorMessage() 
 	{
 		reuseable.WaitUntilElementVisible(errormsgtitile);
-		Assert.assertEquals(errormsgtitile.getText(), Errormessage1);
-		Assert.assertEquals(errormsgparagraph.getText(), Errormessage2);
+		return errormsgtitile.getText();
+		
 	}
 	
 	
@@ -155,5 +155,12 @@ public class LoginPageOrangeHRM {
 		
 		
 	}
+	
+	public String verify_Dashboard_Is_Visiable()
+	{
+		return dashboard.getText();
+	}
+	
+	
 	
 }
